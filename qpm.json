@@ -1,5 +1,5 @@
 {
-  "sharedDir": "regex/include/boost",
+  "sharedDir": "regex/include",
   "dependenciesDir": "extern",
   "info": {
     "name": "boost-regex",
