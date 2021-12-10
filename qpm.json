@@ -12,7 +12,8 @@
         "systemIncludes": [
           "regex/include/"
         ]
-      }
+      },
+      "branchName": "version-v1.76.2"
     }
   },
   "dependencies": [],
