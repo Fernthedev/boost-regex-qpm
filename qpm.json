@@ -12,7 +12,8 @@
         "systemIncludes": [
           "extern/boost-regex/regex/include/"
         ]
-      }
+      },
+      "branchName": "version-v1.76.1"
     }
   },
   "dependencies": [],
