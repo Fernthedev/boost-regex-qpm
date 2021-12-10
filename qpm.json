@@ -9,7 +9,7 @@
     "additionalData": {
       "headersOnly": true,
       "compileOptions": {
-        "systemIncludes": ["extern/boost-regex/regex/include/"]
+        "systemIncludes": ["regex/include/"]
       }
     }
   },
