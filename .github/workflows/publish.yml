@@ -186,4 +186,4 @@ jobs:
 #       TODO
         
     - name: QPM Publish
-      run: ./QPM/QPM publish
+      run: ./QPM/QPM publish ${{secrets.QPM_TOKEN}}
