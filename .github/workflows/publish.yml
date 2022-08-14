@@ -51,10 +51,10 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{secrets.GITHUB_TOKEN}}
-        workflow: main.yml
-        name: QPM-ubuntu-x64
+        workflow: cargo-build.yml
+        name: linux-qpm-rust
         path: QPM
-        repo: sc2ad/QuestPackageManager
+        repo: RedBrumbler/QuestPackageManager-Rust
         
 #     - name: QPM Dependencies Cache
 #       id: cache-qpm-deps
@@ -68,10 +68,9 @@ jobs:
 #           ${{ runner.os }}-${{ env.cache-name }}
       
     - name: QPM Restore
-#       if: steps.cache-qpm-deps.outputs.cache-hit != 'true'
       run: |
-        chmod +x ./QPM/QPM
-        ./QPM/QPM restore
+        chmod +x ./QPM/qpm-rust
+        ./QPM/qpm-rust restore
         
     - name: Get Tag Version
       id: get_tag_version
@@ -82,7 +81,7 @@ jobs:
       
     - name: QPM Edit Version
       run: |
-        ./QPM/QPM package edit version "${{ steps.get_tag_version.outputs.VERSION }}"
+        ./QPM/qpm-rust package edit --version "${{ steps.get_tag_version.outputs.VERSION }}"
         
     # - name: Build
     #   run: |
@@ -158,10 +157,9 @@ jobs:
     #     asset_path: ./obj/local/arm64-v8a/${{ steps.libname.outputs.NAME }}
     #     asset_name: debug_${{ steps.libname.outputs.NAME }}
     #     asset_content_type: application/octet-stream
-        
     - name: Change QPM Package Info
       run: |
-        ./QPM/QPM package edit-extra "branchName" "version-${{ steps.get_tag_version.outputs.TAG }}"
+        ./QPM/qpm-rust package edit-extra --branchName "version-${{ steps.get_tag_version.outputs.TAG }}"
   # ./QPM/QPM package edit-extra "soLink" "${{ steps.upload_release_asset.outputs.browser_download_url }}"
   # ./QPM/QPM package edit-extra "debugSoLink" "${{ steps.upload_debug_asset.outputs.browser_download_url }}"
     - name: Commit Changed package info
@@ -186,4 +184,4 @@ jobs:
 #       TODO
         
     - name: QPM Publish
-      run: ./QPM/QPM publish ${{secrets.QPM_TOKEN}}
+      run: ./QPM/qpm-rust publish ${{secrets.QPM_TOKEN}}
