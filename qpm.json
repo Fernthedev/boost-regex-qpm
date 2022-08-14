@@ -8,6 +8,7 @@
     "url": "https://github.com/Fernthedev/boost-regex-qpm",
     "additionalData": {
       "headersOnly": true,
+      "branchName": "version-v1.80.0",
       "compileOptions": {
         "systemIncludes": [
           "regex/include/"
