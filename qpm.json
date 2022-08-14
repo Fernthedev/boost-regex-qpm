@@ -4,12 +4,14 @@
   "info": {
     "name": "boost-regex",
     "id": "boost-regex",
-    "version": "1.77.0",
+    "version": "1.80.0",
     "url": "https://github.com/Fernthedev/boost-regex-qpm",
     "additionalData": {
       "headersOnly": true,
       "compileOptions": {
-        "systemIncludes": ["regex/include/"]
+        "systemIncludes": [
+          "regex/include/"
+        ]
       }
     }
   },
