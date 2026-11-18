@@ -1,13 +1,12 @@
 {
   "configVersion": "2.0.0",
   "id": "boost-regex",
-  "version": "1.80.0",
+  "version": "1.92.0",
   "additionalData": {
     "url": "https://github.com/Fernthedev/boost-regex-qpm"
   },
   "workspace": {
     "ndk": "^29.0.0",
-    "outBinaries": [],
     "toolchainOut": "toolchain.json",
     "cmake": false
   },
