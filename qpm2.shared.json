@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/QuestPackageManager/QPM.Package/refs/heads/main/qpm.shared.schema.json",
+  "config": {
+    "configVersion": "2.0.0",
+    "id": "boost-regex",
+    "version": "1.92.0",
+    "additionalData": {
+      "description": "",
+      "author": "",
+      "license": "",
+      "url": "https://github.com/Fernthedev/boost-regex-qpm"
+    },
+    "workspace": {
+      "scripts": {},
+      "ndk": "^29.0.0",
+      "toolchainOut": "toolchain.json",
+      "cmake": false
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "dependenciesDirectory": "extern",
+    "sharedDirectory": "regex/include",
+    "compileOptions": {
+      "systemIncludes": [
+        ""
+      ]
+    }
+  },
+  "restoredDependencies": {},
+  "env": {}
+}

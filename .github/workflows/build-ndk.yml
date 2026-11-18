@@ -1,0 +1,27 @@
+name: QPKG build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          persist-credentials: false
+      - uses: Fernthedev/qpm-action@v2
+      - name: Build and package
+        run: qpm2 qpkg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: boost-regex
+          path: boost-regex.qpkg
+          if-no-files-found: error
